@@ -1,2 +1,3 @@
-# towers-of-hanoi
-Solver for the Towers of Hanoi problem
+# Towers of Hanoi
+
+Solver for the Towers of Hanoi puzzle
