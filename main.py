@@ -133,11 +133,11 @@ print('Basic tests pass')
 complex_case_start = (frozenset([9,8,7,6,5,4,3,2,1]), frozenset([]), frozenset([]), frozenset([]), frozenset([]))
 complex_case_goal = (frozenset([9,6,3]), frozenset([]), frozenset([8,5,2]), frozenset([]), frozenset([7,4,1]))
 
-# Running this may take a minute or so
 result = tsolver(complex_case_start, complex_case_start) == [
     (frozenset([9,8,7,6,5,4,3,2,1]), frozenset([]), frozenset([]), frozenset([]), frozenset([]))
 ]
 
+# Running this may take a minute or so
 assert tprint(tsolver(complex_case_start, complex_case_goal)) == [
     (frozenset([1, 2, 3, 4, 5, 6, 7, 8, 9]), frozenset([]), frozenset([]), frozenset([]), frozenset([])),
     (1, 0, 2),
