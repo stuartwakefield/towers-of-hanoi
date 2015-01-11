@@ -1,15 +1,24 @@
 #!/bin/env python
 
 # In our program the pegs are represented by frozensets in a
-# tuple and the discs are represented by numbers which specify
-# the disk size. As a result a limitation of this representation
-# is that disk must have a unique disk size. This is so that
-# our states are hashable as both tuples and frozensets are
-# hashable.
+# tuple. For example, imagine we have three pegs: A, B and C,
+# the peg A will be the first element in the tuple, followed
+# by peg B and C. The disks are added to a frozenset for each
+# of the pegs, representing on which pegs the disks are placed.
+# The discs are represented by numbers which specify the disk
+# size.
 
-# Actions are represented by a tuple of the disk identity / size
-# the peg index from where the disk came, and the peg index to where
-# the disk has moved
+# A limitation of this representation is that a disk must have
+# a unique disk size.
+
+# By representing our state using hashable types: tuples and
+# frozensets, we can easily compare and use states within sets
+# and dicts which will make states easier to work with.
+
+# Actions are represented by a tuple containing three elements:
+# 1 - The disk identity / size
+# 2 - The peg index from where the disk came; and
+# 3 - The peg index to where the disk has moved
 
 # The state space is the number of pegs to the power of the number
 # of disk, i.e.
@@ -21,7 +30,10 @@
 # 1 ^ 3 = 1 possible state
 
 # 3 pegs and 3 disks:
-#
+# 3 ^ 3 = 9 possible states
+
+# 10 pegs and 10 disks:
+# 10 ^ 10 = 10 billion possible states
 
 from itertools import chain
 
